@@ -30,15 +30,19 @@
         {
             btnBanhang = new Button();
             panel2 = new Panel();
+            button1 = new Button();
             btnThoat = new Button();
             btnDonHang = new Button();
             btnKho = new Button();
             btnTrangchu = new Button();
             pictureBox1 = new PictureBox();
             panel_NoiDung = new Panel();
+            textBox1 = new TextBox();
             lblHome = new Label();
+            label1 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel_NoiDung.SuspendLayout();
             SuspendLayout();
             // 
             // btnBanhang
@@ -55,6 +59,8 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel2.BackColor = SystemColors.GradientActiveCaption;
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(btnThoat);
             panel2.Controls.Add(btnDonHang);
             panel2.Controls.Add(btnKho);
@@ -65,6 +71,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(204, 748);
             panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(46, 694);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 42);
+            button1.TabIndex = 6;
+            button1.Text = "Đăng xuất";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnThoat
             // 
@@ -119,10 +135,19 @@
             // panel_NoiDung
             // 
             panel_NoiDung.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_NoiDung.Controls.Add(textBox1);
             panel_NoiDung.Location = new Point(210, 42);
             panel_NoiDung.Name = "panel_NoiDung";
-            panel_NoiDung.Size = new Size(947, 706);
+            panel_NoiDung.Size = new Size(1011, 706);
             panel_NoiDung.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(1030, -36);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(224, 35);
+            textBox1.TabIndex = 7;
             // 
             // lblHome
             // 
@@ -136,18 +161,32 @@
             lblHome.Text = "Trang chủ";
             lblHome.TextAlign = ContentAlignment.TopCenter;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(46, 661);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 30);
+            label1.TabIndex = 6;
+            label1.Text = "Tên";
+            label1.Click += label1_Click;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1157, 748);
+            ClientSize = new Size(1221, 748);
             Controls.Add(lblHome);
             Controls.Add(panel2);
             Controls.Add(panel_NoiDung);
             Name = "MainView";
             Text = "MainView";
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel_NoiDung.ResumeLayout(false);
+            panel_NoiDung.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,5 +202,8 @@
         private PictureBox pictureBox1;
         private Panel panel_NoiDung;
         private Label lblHome;
+        private Button button1;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

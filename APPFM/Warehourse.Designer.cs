@@ -30,22 +30,22 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productTypeIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            collectionProductsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            imagesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productSizeColorsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productTypeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            codeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            sizeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            quantityDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            quantitySoldDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            productViewmodelBindingSource = new BindingSource(components);
             productBindingSource = new BindingSource(components);
             button1 = new Button();
             label2 = new Label();
             textBox1 = new TextBox();
+            productViewmodelBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)productViewmodelBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)productViewmodelBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -53,72 +53,53 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, productTypeIdDataGridViewTextBoxColumn, collectionProductsDataGridViewTextBoxColumn, imagesDataGridViewTextBoxColumn, productSizeColorsDataGridViewTextBoxColumn, productTypeDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = productBindingSource;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, codeDataGridViewTextBoxColumn, sizeDataGridViewTextBoxColumn, colorDataGridViewTextBoxColumn, quantityDataGridViewTextBoxColumn, quantitySoldDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = productViewmodelBindingSource;
             dataGridView1.Location = new Point(-1, 91);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(895, 484);
             dataGridView1.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
             // nameDataGridViewTextBoxColumn
             // 
+            nameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // codeDataGridViewTextBoxColumn
             // 
-            descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
-            // priceDataGridViewTextBoxColumn
+            // sizeDataGridViewTextBoxColumn
             // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            sizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            sizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
             // 
-            // statusDataGridViewTextBoxColumn
+            // colorDataGridViewTextBoxColumn
             // 
-            statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
             // 
-            // productTypeIdDataGridViewTextBoxColumn
+            // quantityDataGridViewTextBoxColumn
             // 
-            productTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ProductTypeId";
-            productTypeIdDataGridViewTextBoxColumn.HeaderText = "ProductTypeId";
-            productTypeIdDataGridViewTextBoxColumn.Name = "productTypeIdDataGridViewTextBoxColumn";
+            quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
-            // collectionProductsDataGridViewTextBoxColumn
+            // quantitySoldDataGridViewTextBoxColumn
             // 
-            collectionProductsDataGridViewTextBoxColumn.DataPropertyName = "CollectionProducts";
-            collectionProductsDataGridViewTextBoxColumn.HeaderText = "CollectionProducts";
-            collectionProductsDataGridViewTextBoxColumn.Name = "collectionProductsDataGridViewTextBoxColumn";
+            quantitySoldDataGridViewTextBoxColumn.DataPropertyName = "QuantitySold";
+            quantitySoldDataGridViewTextBoxColumn.HeaderText = "QuantitySold";
+            quantitySoldDataGridViewTextBoxColumn.Name = "quantitySoldDataGridViewTextBoxColumn";
             // 
-            // imagesDataGridViewTextBoxColumn
+            // productViewmodelBindingSource
             // 
-            imagesDataGridViewTextBoxColumn.DataPropertyName = "Images";
-            imagesDataGridViewTextBoxColumn.HeaderText = "Images";
-            imagesDataGridViewTextBoxColumn.Name = "imagesDataGridViewTextBoxColumn";
-            // 
-            // productSizeColorsDataGridViewTextBoxColumn
-            // 
-            productSizeColorsDataGridViewTextBoxColumn.DataPropertyName = "ProductSizeColors";
-            productSizeColorsDataGridViewTextBoxColumn.HeaderText = "ProductSizeColors";
-            productSizeColorsDataGridViewTextBoxColumn.Name = "productSizeColorsDataGridViewTextBoxColumn";
-            // 
-            // productTypeDataGridViewTextBoxColumn
-            // 
-            productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
-            productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
-            productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
+            productViewmodelBindingSource.DataSource = typeof(DTO.Viewmodel.ProductViewmodel);
             // 
             // productBindingSource
             // 
@@ -132,6 +113,7 @@
             button1.TabIndex = 1;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -150,6 +132,11 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(224, 35);
             textBox1.TabIndex = 3;
+            textBox1.KeyDown += textBox1_KeyDown;
+            // 
+            // productViewmodelBindingSource1
+            // 
+            productViewmodelBindingSource1.DataSource = typeof(DTO.Viewmodel.ProductViewmodel);
             // 
             // Warehourse
             // 
@@ -164,7 +151,9 @@
             Name = "Warehourse";
             Text = "Warehourse";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productViewmodelBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productViewmodelBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,19 +163,17 @@
         private Label label1;
         private Panel panel1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productTypeIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn collectionProductsDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn imagesDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productSizeColorsDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productTypeDataGridViewTextBoxColumn;
         private BindingSource productBindingSource;
         private Button button1;
         private Label label2;
         private TextBox textBox1;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantitySoldDataGridViewTextBoxColumn;
+        private BindingSource productViewmodelBindingSource;
+        private BindingSource productViewmodelBindingSource1;
     }
 }

@@ -63,6 +63,16 @@ namespace APPFM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _097f561a_c8f8_4224_b805_48c36749e1e5 {
+            get {
+                object obj = ResourceManager.GetObject("097f561a-c8f8-4224-b805-48c36749e1e5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo1 {
             get {
                 object obj = ResourceManager.GetObject("logo1", resourceCulture);

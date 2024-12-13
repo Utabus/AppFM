@@ -13,25 +13,43 @@ namespace DAO
     {
       private  FmStyleDbContext _context = new FmStyleDbContext();
 
-
-        public IEnumerable<OrderViewModel> Order()
+        public IEnumerable<OrderViewModel> Order(DateTime? today, DateTime? formday)
         {
-            var donhang =  _context.Orders
+            // Truy vấn ban đầu
+            var query = _context.Orders
                 .Include(x => x.Account)
-                .ThenInclude(x => x.Addresses).Select(x => new OrderViewModel
+                .ThenInclude(x => x.Addresses)
+                .AsQueryable();
+
+            // Kiểm tra nếu có ngày bắt đầu (formday)
+            if (formday.HasValue)
+            {
+                query = query.Where(x => x.CreateDay >= today);
+            }
+
+            // Kiểm tra nếu có ngày kết thúc (today)
+            if (today.HasValue)
+            {
+                query = query.Where(x => x.CreateDay <= formday);
+            }
+
+            // Ánh xạ kết quả vào ViewModel
+            var donhang = query
+                .Select(x => new OrderViewModel
                 {
                     Email = x.Account.Email,
                     FullName = x.Account.FullName,
-                    Address = x.Account.Addresses.FirstOrDefault().Street ,
+                    Address = x.Account.Addresses.FirstOrDefault().Street,
                     Phone = x.Account.Phone,
                     Total = x.Total,
                     CreateDay = x.CreateDay,
                     StatusDescription = x.Status == 5 ? "Đơn hủy"
-                          : x.Status == 2 ? "Chờ xác nhận"
-                          : x.Status == 3 ? "Hoàn thành"
-                          : "Không xác định"
+                                      : x.Status == 2 ? "Chờ xác nhận"
+                                      : x.Status == 3 ? "Hoàn thành"
+                                      : "Không xác định"
                 })
                 .ToList();
+
             return donhang;
         }
 

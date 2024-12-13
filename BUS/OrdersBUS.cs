@@ -14,10 +14,9 @@ namespace BUS
     {
         OrdersDAO OrdersDAO = new OrdersDAO();
 
-        public IEnumerable<OrderViewModel> Order()
+        public IEnumerable<OrderViewModel> Order(DateTime? today, DateTime? formday)
         {
-            var orders =  OrdersDAO.Order();
-
+            var orders =  OrdersDAO.Order(today,formday);
             return orders;
         }
 
